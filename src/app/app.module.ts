@@ -9,6 +9,7 @@ import { ViewQuestionComponent } from './view-question-component/view-question-c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatTabsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

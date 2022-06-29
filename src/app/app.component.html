@@ -1,4 +1,26 @@
-<mat-tab-group>
-    <mat-tab label="Create"> Create question </mat-tab>
-    <mat-tab label="View"> View question </mat-tab>
-</mat-tab-group>
+<div class="selection-holder">
+    <mat-form-field appearance="fill">
+        <mat-select class="selection" (selectionChange)="onSelectionChange($event.value)">
+            <mat-option *ngFor="let option of options" [value]="option.key">
+                {{ option.value }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-tab-group>
+        <mat-tab label="Create">
+            <div *ngIf="selectedValue === 'multi-choise'">
+                <app-multiple-choise-component></app-multiple-choise-component>
+            </div>
+            <div *ngIf=" selectedValue==='multi-answ' ">
+                <app-multiple-response-component></app-multiple-response-component>
+            </div>
+
+        </mat-tab>
+        <mat-tab label="View ">
+            <app-view-question-component> </app-view-question-component>
+        </mat-tab>
+    </mat-tab-group>
+</div>
